@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.55.6" />
+    <meta charset="utf-8">
+<title>Security in collective adaptive systems: a Roadmap by Danilo Pianini</title>
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./reveal-js/css/reveal.css"><link rel="stylesheet" href="./reveal-js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="./highlight-js/default.min.css">
+    
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+  
+
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<p><script src="prism.js"></script>
+<link rel="stylesheet" href="prism.css">
+<link rel="stylesheet" href="blur.css"></p>
+
+<h2 id="security-in-collective-adaptive-systems-https-danysk-github-io-slides-2019-ecas-security"><a href="https://danysk.github.io/Slides-2019-eCAS-security/">Security in collective adaptive systems:</a></h2>
+
+<h2 id="a-roadmap-https-danysk-github-io-slides-2019-ecas-security"><a href="https://danysk.github.io/Slides-2019-eCAS-security/">a Roadmap</a></h2>
+
+<p><strong>Danilo Pianini</strong>, Roberto Casadei, Mirko Viroli</p>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h3 id="our-initial-problem">Our initial problem</h3>
+
+<p><span class='fragment '
+  >
+  Find appropriate
+</span><span class='fragment '
+  >
+   CAS-specific
+</span><span class='fragment '
+  >
+   security practices
+</span>
+<span class='fragment '
+  >
+  Research in literature revealed:
+</span></p>
+
+<ul>
+<li><span/></li>
+<li><span/></li>
+<li><span/></li>
+<li><span style="color: #222222">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span></li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/blackhole.jpg">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h1 id="actually">Actually</h1>
+
+<p>There are several works, but they solve specific issues, no comprehensive methodologies for CASs</p>
+
+<p>(to the best of our knowledge, of course)</p>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h3 id="safety">Safety</h3>
+
+<p><em>the ability to prevent, intercept, identify, and react to</em></p>
+
+<p><span class='fragment '
+  >
+  <strong>unintentional</strong> <em>damage</em>
+</span></p>
+
+<h3 id="security">Security</h3>
+
+<p><em>the ability to prevent, intercept, identify, and react to</em></p>
+
+<p><span class='fragment '
+  >
+  <strong>intentional</strong>, <strong>malicious</strong> <em>damage</em>
+</span></p>
+
+<ul>
+<li><span class='fragment '
+>
+and <strong>privacy</strong> / <strong>confidentiality</strong> is yet another topic
+</span></li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h4 id="they-look-similar">They look similar&hellip;</h4>
+
+<p>they prevent and react to some kind of failure</p>
+
+<h4 id="but-they-are-tackled-very-differently">&hellip;but they are tackled very differently</h4>
+
+<ul>
+<li><span class='fragment '
+>
+Different set of tools
+</span></li>
+<li><span class='fragment '
+>
+Different <em>mindset</em><span class='fragment '
+>
+&ndash; adversiarial thinking
+</span>
+</span></li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h3 id="who-cares-about-security-anyway">Who cares about security, anyway?</h3>
+
+<p>CAS are applied to (or proposed for):</p>
+
+<ul>
+<li><span class='fragment '
+>
+Swarm robotics
+</span></li>
+<li><span class='fragment '
+>
+e-Health
+</span></li>
+<li><span class='fragment '
+>
+Smart cities
+</span></li>
+<li><span class='fragment '
+>
+Crowd safety
+</span></li>
+</ul>
+
+<p><span class='fragment '
+  >
+  Human-safety critical systems
+</span></p>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h3 id="why-are-cass-a-special-case">Why are CASs a special case?</h3>
+
+<p>Traditional security for distributed, or even P2P systems, may fall short in CAS context</p>
+
+<ul>
+<li><span class='fragment '
+  >
+  Elements from different administrative domains
+</span></li>
+<li><span class='fragment '
+  >
+  Often relying on emergence
+</span></li>
+<li><span class='fragment '
+  >
+  Side effects on diverse scales
+</span></li>
+<li><span class='fragment '
+>
+Active research &ndash;&gt; novel challenges
+</span></li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h2 id="where-to-start">Where to start</h2>
+
+<ul>
+<li>Literature on security in related systems
+
+<ul>
+<li>Internet of Things (mostly focused on networking)</li>
+<li>Autonomic computing</li>
+</ul></li>
+<li>Literature on security methods at large</li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h2 id="security-patterns">Security patterns</h2>
+
+<ul>
+<li><span style="color:#3ea0e4">97 security patterns</span>
+identified by six works</li>
+<li><a href="https://ieeexplore.ieee.org/document/4267603/">Systematically organized</a> by Hafiz et al. by:
+
+<ul>
+<li>Context</li>
+<li>Threat model</li>
+</ul></li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h2 id="classification-by-context">Classification by context</h2>
+
+<ul>
+<li>Core</li>
+<li>Perimeter</li>
+<li>Exterior</li>
+</ul>
+
+<p>Some pattern may involve multiple contexts</p>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h3 id="classification-by-threat-model">Classification by threat model</h3>
+
+<ul>
+<li><span style="color:#3ea0e4">S</span>
+poofing</li>
+<li><span style="color:#3ea0e4">T</span>
+ampering</li>
+<li><span style="color:#3ea0e4">R</span>
+epudiation</li>
+<li><span style="color:#3ea0e4">I</span>
+nformation Disclosure</li>
+<li><span style="color:#3ea0e4">D</span>
+enial of Service</li>
+<li><span style="color:#3ea0e4">E</span>
+scalation of privilege</li>
+<li>Multi-purpose</li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h3 id="higher-level-patterns">Higher level patterns</h3>
+
+<ul>
+<li>12 patterns transcend such classification</li>
+<li>Security <span style="color:#3ea0e4"><em>principles</em></span>
+rather than security <span style="color:#3ea0e4"><em>patterns</em></span></li>
+</ul>
+
+<p>A bit like the relationship between <em>architectural</em> pattern and <em>design</em> patterns in programming</p>
+
+<p>&ndash;&gt; We will focus on those</p>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/planning.png">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/planning.png"
+      data-state="blur-animation"
+      data-transition="fade-in fade-out">
+  
+
+<h2 id="plan-for-security">Plan for security</h2>
+
+<ul>
+<li>Asset evaluation</li>
+<li>Risk determination</li>
+<li>Security needs identification for assets</li>
+<li>Vulnerability assessment</li>
+</ul>
+
+<p>CASs&rsquo; openness may imply partial knowledge of assets</p>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/minefield.jpg">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/minefield.jpg"
+      data-state="blur-animation"
+      data-transition="fade-in fade-out">
+  
+
+<h2 id="minefield">Minefield</h2>
+
+<p>Custom variations of well-known security algorithms</p>
+
+<ul>
+<li>Reduces global system knowledge</li>
+<li>May backfire</li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/hidden.jpeg"
+      data-transition="fade-in fade-out">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/hidden.jpeg"
+      data-state="blur-animation"
+      data-transition="fade-in fade-out">
+  
+
+<h2 id="hidden-implementation">Hidden implementation</h2>
+
+<p>Minimize communication of system details with clients</p>
+
+<ul>
+<li>Reduces global system knowledge</li>
+<li>May backfire dramatically</li>
+<li>Security cannot be implemented <strong>solely</strong> by obscurity</li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/accesscard.jpg"
+      data-transition="fade-in fade-out">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/accesscard.jpg"
+      data-state="blur-animation"
+      data-transition="fade-in fade-out">
+  
+
+<h2 id="policy">Policy</h2>
+
+<p>Express policies clearly, check conformance, applicate orderly, isolate enforcement</p>
+
+<ul>
+<li>Lots of useful literature in autonomic computing!</li>
+<li><a href="https://doi.org/10.1007/978-3-642-35887-6_2">SACPL</a> a possible base for a formal, CAS-oriented policy language?</li>
+<li>Application in order and isolation of enforcement potentially problematic</li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/accesscard.jpg"
+      data-state="blur"
+      data-transition="fade-in fade-out">
+  
+
+<h2 id="protected-system">Protected System</h2>
+
+<p>Prevent unauthorized access as first line of defense</p>
+
+<ul>
+<li>Mediate access via guards</li>
+<li>Typically enforced via <em>single access point</em></li>
+<li>Potentially clashes with openness and scalability</li>
+</ul>
+
+<p>How to enforce policies for many-to-many access to resources?</p>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/minas.jpg"
+      data-transition="fade-in fade-out">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/minas.jpg"
+      data-state="blur-animation"
+      data-transition="fade-in fade-out">
+  
+
+<h2 id="defense-in-depth">Defense in depth</h2>
+
+<p>Account for threats at multiple layers</p>
+
+<ul>
+<li>Close to metal</li>
+<li>Platform</li>
+<li>Middleware / coordination</li>
+<li>Application</li>
+</ul>
+
+<p>New implications for CAS!</p>
+
+<ul>
+<li>Multi-scale / multi-layer adaptation is pervasive</li>
+<li>Attack a layer to open a breach on a higher level</li>
+<li>Turn adaptation against itself</li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/hanging.jpg"
+      data-transition="fade-in fade-out">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/hanging.jpg"
+      data-state="blur-animation"
+      data-transition="fade-in fade-out">
+  
+
+<h2 id="low-hanging-fruit">Low hanging fruit</h2>
+
+<p>Keep system in operation, plug the holes</p>
+
+<ul>
+<li>Related to maintenance and continuous operativity</li>
+<li>Pluggin holes in a CAS? How to?</li>
+<li>Runtime injection of security patches?</li>
+<li>Potentially larger attack surface</li>
+<li>Meta-facilities proposed in CAS
+
+<ul>
+<li>None designed with security in mind</li>
+</ul></li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/hacker.jpeg">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/hacker-self.jpeg">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/hacker.jpeg"
+      data-state="blur-animation"
+      data-transition="fade-in fade-out">
+  
+
+<h2 id="white-hats-hack-thyself">White hats, hack thyself</h2>
+
+<p>Plan and execute attacks under controlled, but non trivial, circumstances</p>
+
+<ul>
+<li>Especially expensive on a CAS
+
+<ul>
+<li>Deployments can be massive</li>
+</ul></li>
+<li>Behavior is context dependent and situated</li>
+<li>Similarities with corner-case testing</li>
+<li>Simulation as security sandbox?</li>
+<li>Emulating multi-scale attacks can be very hard</li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/balance.jpg">
+  
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/balance.jpg"
+      data-state="blur-animation">
+  
+
+<h2 id="balancing">Balancing</h2>
+
+<h3 id="prevention-detection-response">prevention, detection, response</h3>
+
+<ul>
+<li>Don&rsquo;t focus only on prevention</li>
+<li>Perfectly secure CASs are unlikely to ever exist</li>
+<li>Related to monitoring</li>
+<li>Immune system mimicry</li>
+<li>Good news: recovery <em>might</em> be easier in CASs</li>
+</ul>
+
+</section>
+
+
+<section data-noprocess data-shortcode-slide
+      data-background-image="assets/bg.png">
+  
+
+<h2 id="the-future">The future</h2>
+
+<ul>
+<li>Analyze the existing security patterns in detail
+
+<ul>
+<li>Understand implications</li>
+<li>Tailor them to CAS</li>
+<li>Identify unsolved issues</li>
+</ul></li>
+<li>Consider security when designing CAS</li>
+<li>Better understand multi-level attacks</li>
+</ul>
+
+</section><section>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src=./reveal-hugo/object-assign.js></script>
+
+<a href="./reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<script type="application/json" id="reveal-hugo-site-params">null</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="./reveal-js/lib/js/head.min.js"></script>
+<script src="./reveal-js/js/reveal.js"></script>
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+  
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));
+  Reveal.initialize(options);
+</script>
+
+<script type="text/javascript" src="./reveal-js/lib/js/classList.js"></script>
+
+
+<script type="text/javascript" src="./reveal-js/plugin/markdown/marked.js"></script>
+
+<script type="text/javascript" src="./reveal-js/plugin/markdown/markdown.js"></script>
+
+<script type="text/javascript" src="./reveal-js/plugin/highlight/highlight.js"></script>
+
+<script type="text/javascript" src="./reveal-js/plugin/zoom-js/zoom.js"></script>
+
+
+<script type="text/javascript" src="./reveal-js/plugin/notes/notes.js"></script>
+
+
+
+<script type="text/javascript">
+if (hljs)
+  hljs.initHighlightingOnLoad();
+</script>
+    
+    
+  </body>
+</html>
